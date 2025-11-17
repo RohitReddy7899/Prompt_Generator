@@ -42,5 +42,35 @@ $(function(){
       success: renderList
     });
   });
+  $("#sortAZ-btn").click(function(){
+    const kw = $("#search-key").val();
+    $.ajax({
+      url: "/library/sortAZ",
+      method: "POST",
+      contentType: "application/json",
+      data: JSON.stringify({keyword: kw}),
+      success: renderList
+    });
+  });
+  $("#sortScore-btn").click(function(){
+    const kw = $("#search-key").val();
+    $.ajax({
+      url: "/library/sortScore",
+      method: "POST",
+      contentType: "application/json",
+      data: JSON.stringify({keyword: kw}),
+      success: renderList
+    });
+  });
+  $("#sortTone-btn").click(function(){
+    const kw = $("search-key").val();
+    $.ajax({
+      url: "/library/sortTone",
+      method: "POST",
+      contentType: "application/json",
+      data: JSON.stringify({keyword: kw}),
+      success: renderList
+    });
+  });
   loadLibrary();
 });
